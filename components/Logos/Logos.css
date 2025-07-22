@@ -1,0 +1,15 @@
+.logos {
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  left: 3%;
+  height: 10%;
+}
+
+.logo {
+  width: 15%;
+  height: auto;
+}

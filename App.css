@@ -10,8 +10,14 @@
   width: 100vw;
   text-align: center;
   direction: rtl;    
-  background-image: url('././Assets/Images/background.svg');
+  background-image: url('src/assets/images/background.svg');
   background-size: 100% 100%;
   background-size: cover;         
   background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
 }
