@@ -21,23 +21,26 @@ function WelcomePage() {
       
     </div>
     ) : ( 
-        <div className="explanation">
+        <div className="explanation scrollbar" >
+            
             <div className='title'>{instructions.introduction.title}</div>
-            <div>{instructions.introduction.text}</div>
+            <div className='second-title'>{instructions.introduction.text}</div>
             <ul className='explanation-list'>
-                <li>{instructions.introduction.explenation1}</li>
-                <ul style="list-style-type:none">
-                    <li>{instructions.mainsubject.subject1}</li>    
-                    <li>{instructions.mainsubject.subject2}</li>
-                    <li>{instructions.mainsubject.subject3}</li>
-                    <li>{instructions.mainsubject.subject4}</li>
-                    <li>{instructions.mainsubject.subject5}</li>
-                </ul> 
-                <li>{instructions.introduction.explenation2}</li>
-                <li>{instructions.introduction.explenation3}</li>
-                <li>{instructions.introduction.explenation4}</li>
+                <li className='explanation-list-item'>{instructions.introduction.explenation1}</li>
+                    <ol className='explanation-list-subjects'>
+                        <li>{instructions.mainsubject.subject1}</li>    
+                        <li>{instructions.mainsubject.subject2}</li>
+                        <li>{instructions.mainsubject.subject3}</li>
+                        <li>{instructions.mainsubject.subject4}</li>
+                        <li>{instructions.mainsubject.subject5}</li>
+                    </ol> 
+                <li className='explanation-list-item'>{instructions.introduction.explenation2}</li>
+                <li className='explanation-list-item'>{instructions.introduction.explenation3}</li>
+                <li className='explanation-list-item'>{instructions.introduction.explenation4}</li>
             </ul>
+            <button onClick={start} className="next-button">המשך</button>
         </div>
+        
     )}
     </div>
   );
