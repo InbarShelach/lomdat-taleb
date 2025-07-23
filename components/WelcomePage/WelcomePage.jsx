@@ -4,25 +4,27 @@ import "./WelcomePage.css"; // מחובר לקובץ ה־CSS
 import instructions from '../../information/instructions.json';
 
 function WelcomePage() {
-    const [showFirst, setShowFirst] = useState(true);
-    const start = () => {
-    setShowFirst(!showFirst); // הופך בין true ל-false
-    }
+  const [step, setStep] = useState(1);
+ 
+  const nextStep = () => {
+    if (step < 3) setStep(step + 1);
+  };
+
   return(
     <div className="WelcomePage">
-     {showFirst ? (
+     {step === 1 && (
     <div>
       
       <div className="text-box">
         <h1>ברוכים הבאים</h1>
         <p>ללומדת תל"ב של בהל"צ</p>
-        <button onClick={start} className="start-button">התחלה</button>
+        <button onClick={nextStep} className="start-button">התחלה</button>
       </div>
       
     </div>
-    ) : ( 
+    )}
+    {step === 2 && ( 
         <div className="explanation scrollbar" >
-            
             <div className='title'>{instructions.introduction.title}</div>
             <div className='second-title'>{instructions.introduction.text}</div>
             <ul className='explanation-list'>
@@ -38,9 +40,21 @@ function WelcomePage() {
                 <li className='explanation-list-item'>{instructions.introduction.explenation3}</li>
                 <li className='explanation-list-item'>{instructions.introduction.explenation4}</li>
             </ul>
-            <button onClick={start} className="next-button">המשך</button>
+            <button onClick={nextStep} className="next-button">המשך</button>
         </div>
         
+    )}
+    {step === 3 && (
+        <div className="explanation scrollbar">
+            <div className='title'>{instructions.instraction.title}</div>
+            <ul className='explanation-list'>
+                <li className='explanation-list-item'>{instructions.instraction.first}</li>
+                <li className='explanation-list-item'>{instructions.instraction.second}</li>
+                <li className='explanation-list-item'>{instructions.instraction.third}</li>
+                <li className='explanation-list-item'>{instructions.instraction.forth}</li>
+                <li className='explanation-list-item'>{instructions.instraction.fifth}</li>
+            </ul>
+        </div>
     )}
     </div>
   );

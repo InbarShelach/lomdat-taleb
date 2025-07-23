@@ -97,6 +97,7 @@
     float: right;
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .title {
@@ -166,8 +167,16 @@
     margin-bottom: 10%;
 }
 .scrollbar {
-  overflow-y: auto;
+  overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: #c98f6b transparent;
   float: right;
 }
+
+.scroll {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
